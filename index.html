@@ -8,97 +8,54 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #ffffff;
-      color: #333;
-    }
-    header {
-      background-color: #0057B8;
-      color: white;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header img {
-      height: 50px;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
+      font-family: Arial, sans-serif;
     }
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('logo.png') center/contain no-repeat;
-      background-color: #f0f0f0;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background-color: #f2f2f2;
       text-align: center;
+      padding: 30px;
+      position: relative;
     }
-    .hero h1 {
-      color: #fff;
-      font-size: 36px;
+    .slider {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
     }
-    .section {
-      padding: 40px;
-      text-align: center;
+    .slider img {
+      width: 100%;
+      height: auto;
+      display: none;
     }
-    .buttons a {
-      display: inline-block;
-      background-color: #FFD700;
-      color: #0057B8;
-      padding: 12px 25px;
-      margin: 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+    .slider img.active {
+      display: block;
     }
-    footer {
-      background-color: #0057B8;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    footer a {
-      color: #FFD700;
-      text-decoration: none;
-      margin: 0 10px;
+    h1 {
+      color: #0033cc;
     }
   </style>
 </head>
 <body>
-  <header>
-    <div><img src="logo.png" alt="RIVAL Logo"></div>
-    <nav>
-      <a href="index.html">Головна</a>
-      <a href="about.html">Про нас</a>
-      <a href="contacts.html">Контакти</a>
-    </nav>
-  </header>
   <section class="hero">
-    <h1>Надійні пакувальні матеріали від українського виробника 🇺🇦</h1>
-  </section>
-  <section class="section">
-    <h2>Оберіть категорію продукції</h2>
-    <div class="buttons">
-      <a href="polietilen.html">Поліетиленова плівка</a>
-      <a href="strech.html">Стрейч плівка</a>
-      <a href="miski.html">Мішки та пакети</a>
-      <a href="skotch.html">Скотч</a>
-      <a href="gofrotara.html">Гофротара</a>
+    <h1>Надійні пакувальні матеріали від українського виробника</h1>
+    <div class="slider">
+<img src="25af6a08-43cb-4e9f-a86a-eaf186400351.png" class="active" />
+<img src="c5a8b6b8-64dc-430e-9b0a-66c164109242.png" class="" />
+<img src="b779eb02-809d-4911-b0b7-d02cb20402d8.png" class="" />
+<img src="d815085c-8b64-4c3a-8597-81fc27266bd0.png" class="" />
+<img src="17385db1-9959-4fa6-bcdd-211961a374cf.png" class="" />
+<img src="f86750c6-6e0e-42bc-8ae1-4a434301dcfd.png" class="" />
+
     </div>
   </section>
-  <footer>
-    <p>Телефон: +380733262132 | Email: rival.oleksij@gmail.com</p>
-    <p>
-      <a href="https://www.instagram.com/llc_rival">Instagram</a> |
-      <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
-    </p>
-    <p>&copy; 2025 Rival Packing</p>
-  </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slider img');
+    setInterval(() => {
+      slides[slideIndex].classList.remove('active');
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add('active');
+    }, 3000);
+  </script>
 </body>
 </html>
