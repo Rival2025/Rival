@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RIVAL Packing</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+    .hero {
+      background-color: #f2f2f2;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .slider {
+      max-width: 900px;
+      margin: 10px auto;
+      position: relative;
+      height: 400px;
+    }
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+      border-radius: 10px;
+    }
+    .slider img.active {
+      display: block;
+    }
+    .container {
+      padding: 40px;
+      text-align: center;
+    }
+    h1 {
+      color: #0033cc;
+    }
+    .product-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .product-buttons a {
+      text-decoration: none;
+      background-color: #ffdd00;
+      color: #000;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .product-buttons a:hover {
+      background-color: #ffc107;
+    }
+    footer {
+      background-color: #0033cc;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffdd00;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h2>Надійні пакувальні матеріали від українського виробника</h2>
+    <div class="slider">
+<img src="25af6a08-43cb-4e9f-a86a-eaf186400351.png" class="active" />
+<img src="c5a8b6b8-64dc-430e-9b0a-66c164109242.png" class="" />
+<img src="b779eb02-809d-4911-b0b7-d02cb20402d8.png" class="" />
+<img src="d815085c-8b64-4c3a-8597-81fc27266bd0.png" class="" />
+<img src="17385db1-9959-4fa6-bcdd-211961a374cf.png" class="" />
+<img src="f86750c6-6e0e-42bc-8ae1-4a434301dcfd.png" class="" />
+
+    </div>
+  </section>
+
+  <section class="container">
+    <h1>RIVAL Packing</h1>
+    <p>🔹 Досвід у пакувальних матеріалах більше 5 років</p>
+    <p>🔹 Знаходимось у місті Дніпро</p>
+    <p>🔹 Працюємо як з малим, так і з великим оптом</p>
+    <p>🔹 Перевага — індивідуальний підхід до кожного клієнта</p>
+
+    <div class="product-buttons">
+      <a href="#">Поліетиленова плівка</a>
+      <a href="#">Стрейч плівка</a>
+      <a href="#">Мішки та пакети поліетиленові</a>
+      <a href="#">Скотч</a>
+      <a href="#">Гофротара</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
+    <p>
+      <a href="https://www.instagram.com/llc_rival">Instagram</a> |
+      <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
+    </p>
+    <p>&copy; 2025 Rival Packing</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slider img');
+    setInterval(() => {
+      slides[slideIndex].classList.remove('active');
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add('active');
+    }, 3000);
+  </script>
+</body>
+</html>
