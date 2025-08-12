@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Поліетиленова плівка</title>
+  <title>Polietilen</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
       position: relative;
     }
-
     body::before {
       content: "";
       background-color: rgba(255, 255, 255, 0.85);
@@ -24,7 +24,6 @@
       height: 100%;
       z-index: -1;
     }
-
     nav {
       background-color: #0033cc;
       color: white;
@@ -32,37 +31,30 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
-
     .menu-icon {
       font-size: 26px;
       cursor: pointer;
       display: none;
     }
-
     .menu {
       display: flex;
       gap: 15px;
+      flex-wrap: wrap;
     }
-
     .menu a {
       color: white;
       text-decoration: none;
       padding: 10px;
     }
-
     .menu a:hover {
       background-color: #0022aa;
     }
-
     @media (max-width: 768px) {
       .menu {
         display: none;
         flex-direction: column;
-        background-color: #0033cc;
-        position: absolute;
-        top: 60px;
-        left: 0;
         width: 100%;
         padding: 10px 0;
       }
@@ -73,7 +65,6 @@
         display: block;
       }
     }
-
     .container {
       max-width: 900px;
       margin: auto;
@@ -83,49 +74,6 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       margin-top: 30px;
     }
-
-    h1 {
-      color: #0033cc;
-    }
-
-    ul {
-      text-align: left;
-      margin-top: 10px;
-    }
-
-    a.return-link {
-      display: inline-block;
-      margin-top: 30px;
-      text-decoration: none;
-      color: #0033cc;
-    }
-
-    .slider {
-      max-width: 100%;
-      position: relative;
-      margin-top: 20px;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-
-    .slides {
-      display: flex;
-      width: 300%;
-      animation: slide 12s infinite;
-    }
-
-    .slides img {
-      width: 100%;
-      height: auto;
-    }
-
-    @keyframes slide {
-      0% {margin-left: 0%;}
-      33% {margin-left: -100%;}
-      66% {margin-left: -200%;}
-      100% {margin-left: 0%;}
-    }
-
     footer {
       background-color: #0033cc;
       color: white;
@@ -133,7 +81,6 @@
       padding: 30px 20px;
       margin-top: 40px;
     }
-
     footer a {
       color: #ffdd00;
       text-decoration: none;
@@ -143,17 +90,20 @@
 </head>
 <body>
 
-  <nav>
-  <a href="/Rival/index.html">Головна</a>
-  <a href="/Rival/polietilen.html">Поліетиленова плівка</a>
-  <a href="/Rival/strech.html">Стрейч плівка</a>
-  <a href="/Rival/mishky.html">Мішки та пакети</a>
-  <a href="/Rival/skotch.html">Скотч</a>
-  <a href="/Rival/gofra.html">Гофротара</a>
-  <a href="/Rival/etiketky.html">Клейкі етикетки</a>
+<nav>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="menu" id="menu">
+    <a href="/Rival/index.html">Головна</a>
+    <a href="/Rival/polietilen.html">Поліетиленова плівка</a>
+    <a href="/Rival/strech.html">Стрейч плівка</a>
+    <a href="/Rival/mishky.html">Мішки та пакети</a>
+    <a href="/Rival/skotch.html">Скотч</a>
+    <a href="/Rival/gofra.html">Гофротара</a>
+    <a href="/Rival/etiketky.html">Клейкі етикетки</a>
+  </div>
 </nav>
 
-  <div class="container">
+<div class="container">
     <h1>Поліетиленова плівка</h1>
     <p>ТОВ "Райвал" виготовляє пакувальну поліетиленову плівку у різних форматах:</p>
     <ul>
@@ -180,21 +130,20 @@
 
     <a class="return-link" href="index.html">← Повернутись на головну</a>
   </div>
+<footer>
+  <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
+  <p>
+    <a href="https://www.instagram.com/llc_rival">Instagram</a> |
+    <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
+  </p>
+  <p>&copy; 2025 ТОВ "Райвал"</p>
+</footer>
 
-  <footer>
-    <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
-    <p>
-      <a href="#">Instagram</a> |
-      <a href="#">TikTok</a>
-    </p>
-    <p>&copy; 2025 ТОВ "Райвал"</p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
-    }
-  </script>
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
