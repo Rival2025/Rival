@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Strech</title>
+  <title>Стрейч плівка</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -74,6 +74,30 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       margin-top: 30px;
     }
+    .slider {
+      max-width: 100%;
+      position: relative;
+      margin-top: 20px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite;
+    }
+    .slides img {
+      width: 300px;
+      height: auto;
+      margin-right: 20px;
+      border-radius: 10px;
+    }
+    @keyframes slide {
+      0% {margin-left: 0%;}
+      33% {margin-left: -100%;}
+      66% {margin-left: -200%;}
+      100% {margin-left: 0%;}
+    }
     footer {
       background-color: #0033cc;
       color: white;
@@ -103,7 +127,7 @@
   </div>
 </nav>
 
-<div class="container">
+  <div class="container">
     <h1>Стрейч Плівка</h1>
     <p>Стрейч-плівка — це універсальний пакувальний матеріал для фіксації та захисту вантажів.</p>
     <ul>
@@ -118,14 +142,15 @@
       <li>Чорна</li>
       <li>Кольорова</li>
     </ul>
-
-    <div class="slider">
-      <div class="slide"><img src="sl1.jfif" alt="Стрейч 1"></div>
-      <div class="slide"><img src="sl2.jfif" alt="Стрейч 2"></div>
-      <div class="slide"><img src="sl3.jfif" alt="Стрейч 3"></div>
-      <div class="slide"><img src="sl4.jfif" alt="Стрейч 4"></div>
+      <div class="slider">
+        <div class="slides">
+          <img src="strech1.jfif" alt="">
+          <img src="strech2.jfif" alt="">
+          <img src="strech3.jfif" alt="">
+        </div>
+      </div>
     </div>
-  </div>
+    
 <footer>
   <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
   <p>
@@ -134,12 +159,10 @@
   </p>
   <p>&copy; 2025 ТОВ "Райвал"</p>
 </footer>
-
 <script>
-  function toggleMenu() {
+  function toggleMenu() {{
     document.getElementById('menu').classList.toggle('active');
-  }
+  }}
 </script>
-
 </body>
 </html>
