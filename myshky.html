@@ -10,18 +10,48 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f8f8;
-      color: #333;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
     }
+    body::before {
+      content: "";
+      background-color: rgba(255, 255, 255, 0.85);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    nav {
+      background-color: #0033cc;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ffdd00;
+    }
+
     .container {
       padding: 40px 20px;
       max-width: 900px;
       margin: 0 auto;
     }
+
     h1 {
       color: #0033cc;
       text-align: center;
     }
+
     p {
       font-size: 18px;
       line-height: 1.6;
@@ -59,11 +89,16 @@
   </style>
 </head>
 <body>
-  <div style="text-align: center; padding: 20px;">
-  <a href="index.html">
-    <img src="logo.png" alt="Логотип Райвал" style="max-height: 80px;">
-  </a>
-</div>
+
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="polietilen.html">Поліетиленова плівка</a>
+    <a href="strech.html">Стрейч плівка</a>
+    <a href="bags.html">Мішки та пакети</a>
+    <a href="scotch.html">Скотч</a>
+    <a href="goffrotara.html">Гофротара</a>
+    <a href="etiketki.html">Клейкі етикетки</a>
+  </nav>
 
   <div class="container">
     <h1>Мішки та пакети</h1>
@@ -71,7 +106,6 @@
     <p>🔹 Пакети виготовляємо у форматах: <strong>майка</strong>, <strong>петля</strong>, <strong>банан</strong> — з можливістю нанесення друку до 8 кольорів.</p>
     <p>🔹 Індивідуальний прорахунок згідно ваших параметрів та обсягу.</p>
 
-    <!-- Слайд-шоу -->
     <div class="slider">
       <div class="slide"><img src="bag1.jfif" alt="Мішки 1"></div>
       <div class="slide"><img src="bag2.jfif" alt="Мішки 2"></div>
@@ -103,10 +137,11 @@
       slideIndex++;
       if (slideIndex > slides.length) { slideIndex = 1 }
       slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 3000); // Зміна кожні 3 секунди
+      setTimeout(showSlides, 3000);
     }
 
     showSlides();
   </script>
+
 </body>
 </html>
