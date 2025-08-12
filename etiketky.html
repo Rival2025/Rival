@@ -10,8 +10,62 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f8f8;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
       color: #333;
+    }
+    body::before {
+      content: "";
+      background-color: rgba(255, 255, 255, 0.85);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    nav {
+      background-color: #0033cc;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .menu-icon {
+      font-size: 26px;
+      cursor: pointer;
+      display: none;
+    }
+    .menu {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ffdd00;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #0033cc;
+        width: 100%;
+        padding: 10px;
+      }
+      .menu.active {
+        display: flex;
+      }
+      .menu-icon {
+        display: block;
+      }
     }
     .container {
       padding: 40px 20px;
@@ -22,17 +76,10 @@
       color: #0033cc;
       text-align: center;
     }
-    p {
+    p, ul {
       font-size: 18px;
       line-height: 1.6;
-      margin-bottom: 15px;
     }
-    ul {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    /* Слайдер */
     .slider {
       position: relative;
       max-width: 100%;
@@ -47,7 +94,6 @@
       height: auto;
       border-radius: 8px;
     }
-
     footer {
       background-color: #0033cc;
       color: white;
@@ -63,31 +109,37 @@
   </style>
 </head>
 <body>
-
-  <div style="text-align: center; padding: 20px;">
-    <a href="index.html">
-      <img src="logo.png" alt="Логотип Райвал" style="max-height: 80px;">
-    </a>
-  </div>
+  <nav>
+    <strong>RIVAL</strong>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+      <a href="index.html">Головна</a>
+      <a href="polietilen.html">Поліетиленова плівка</a>
+      <a href="strech.html">Стрейч плівка</a>
+      <a href="myshky.html">Мішки та пакети</a>
+      <a href="scotch.html">Скотч</a>
+      <a href="goffrotara.html">Гофротара</a>
+      <a href="etiketky.html">Клейкі етикетки</a>
+    </div>
+  </nav>
 
   <div class="container">
     <h1>Клейкі етикетки</h1>
-    <p>Ми виготовляємо самоклеючі етикетки різного типу та формату:</p>
+    <p>Пропонуємо виготовлення самоклейних етикеток для вашої продукції.</p>
     <ul>
-      <li>Етикетки для продукції (харчової, косметичної, побутової)</li>
-      <li>Етикетки зі штрихкодом або QR-кодом</li>
-      <li>Термотрансферні та термоетикетки</li>
-      <li>Етикетки в рулонах або на аркушах</li>
+      <li>Білі, прозорі, кольорові етикетки</li>
+      <li>З друком логотипу, штрихкодів, QR-кодів</li>
+      <li>У рулонах або аркушах</li>
+      <li>Для харчової, хімічної, логістичної продукції</li>
     </ul>
-    <p>🎨 Повноколірний друк</p>
-    <p>📐 Індивідуальні розміри та форми</p>
-    <p>🚚 Доставка по всій Україні</p>
+    <p>🎯 Індивідуальний дизайн під ваш бренд</p>
+    <p>🖨️ Друк до 8 кольорів</p>
+    <p>🚚 Доставка по Україні</p>
 
-    <!-- Слайд-шоу -->
     <div class="slider">
-      <div class="slide"><img src="etiketka1.jfif" alt="Етикетка 1"></div>
-      <div class="slide"><img src="etiketka2.jfif" alt="Етикетка 2"></div>
-      <div class="slide"><img src="etiketka3.jfif" alt="Етикетка 3"></div>
+      <div class="slide"><img src="etiket1.jfif" alt="Етикетка 1"></div>
+      <div class="slide"><img src="etiket2.jpg" alt="Етикетка 2"></div>
+      <div class="slide"><img src="etiket3.jpg" alt="Етикетка 3"></div>
     </div>
   </div>
 
@@ -101,19 +153,18 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+
     let slideIndex = 0;
     const slides = document.getElementsByClassName("slide");
-
     function showSlides() {
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      slideIndex = (slideIndex % slides.length) + 1;
       slides[slideIndex - 1].style.display = "block";
       setTimeout(showSlides, 3000);
     }
-
     showSlides();
   </script>
 </body>
