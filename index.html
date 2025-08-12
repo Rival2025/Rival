@@ -4,24 +4,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ТОВ Райвал</title>
+  <title>RIVAL Packing</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f8f8f8;
     }
-    .hero {
-      background-color: #f2f2f2;
-      padding: 20px 0;
-      text-align: center;
+
+    .navbar {
+      background-color: #0033cc;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    .menu-icon {
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      background-color: #0033cc;
+    }
+
+    .menu a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-top: 1px solid #ffffff33;
+    }
+
+    .menu a:hover {
+      background-color: #0022aa;
+    }
+
     .slider {
       max-width: 900px;
       margin: 10px auto;
       position: relative;
       height: 400px;
     }
+
     .slider img {
       width: 100%;
       height: 100%;
@@ -29,16 +57,20 @@
       display: none;
       border-radius: 10px;
     }
+
     .slider img.active {
       display: block;
     }
+
     .container {
       padding: 40px;
       text-align: center;
     }
+
     h1 {
       color: #0033cc;
     }
+
     .product-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -46,6 +78,7 @@
       gap: 15px;
       margin-top: 30px;
     }
+
     .product-buttons a {
       text-decoration: none;
       background-color: #ffdd00;
@@ -55,9 +88,11 @@
       font-weight: bold;
       transition: background-color 0.3s ease;
     }
+
     .product-buttons a:hover {
       background-color: #ffc107;
     }
+
     footer {
       background-color: #0033cc;
       color: white;
@@ -65,33 +100,51 @@
       padding: 30px 20px;
       margin-top: 40px;
     }
+
     footer a {
       color: #ffdd00;
       text-decoration: none;
       margin: 0 10px;
     }
+
+    @media (max-width: 600px) {
+      .product-buttons {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <section class="hero">
-    <h2>Пакувальні рішення для бізнесу та дому від ТОВ "Райвал"</h2>
-    <div class="slider">
-      <img src="rvl1.jfif" class="active" />
-      <img src="rvl2.jfif" class="" />
-      <img src="rvl3.jfif" class="" />
-      <img src="rvl4.jfif" class="" />
-      <img src="rvl5.jfif" class="" />
-      <img src="rvl6.jfif" class="" />
-    </div>
-  </section>
+  <div class="navbar">
+    <div><strong>RIVAL</strong></div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  </div>
+  <div class="menu" id="menu">
+    <a href="polietilen.html">Поліетиленова плівка</a>
+    <a href="streych.html">Стрейч плівка</a>
+    <a href="myshky.html">Мішки та пакети</a>
+    <a href="skotch.html">Скотч</a>
+    <a href="gofrotara.html">Гофротара</a>
+    <a href="etiketky.html">Клейкі етикетки</a>
+  </div>
 
-  <section class="container">
-    <h1>ТОВ "Райвал"</h1>
-    <p>🔹 Більше 5 років досвіду в пакувальній продукції</p>
+  <div class="slider">
+    <img src="25af6a08-43cb-4e9f-a86a-eaf186400351.png" class="active" />
+    <img src="c5a8b6b8-64dc-430e-9b0a-66c164109242.png" />
+    <img src="b779eb02-809d-4911-b0b7-d02cb20402d8.png" />
+    <img src="d815085c-8b64-4c3a-8597-81fc27266bd0.png" />
+    <img src="17385db1-9959-4fa6-bcdd-211961a374cf.png" />
+    <img src="f86750c6-6e0e-42bc-8ae1-4a434301dcfd.png" />
+  </div>
+
+  <div class="container">
+    <h1>RIVAL Packing</h1>
+    <p>🔹 Досвід у пакувальних матеріалах більше 5 років</p>
+    <p>🔹 Знаходимось у місті Дніпро</p>
+    <p>🔹 Працюємо як з малим, так і з великим оптом</p>
     <p>🔹 Власне виробництво у місті Дніпро</p>
     <p>🔹 Доставка по всій Україні</p>
-    <p>🔹 Індивідуальний підхід до кожного клієнта</p>
 
     <div class="product-buttons">
       <a href="polietilen.html">Поліетиленова плівка</a>
@@ -101,18 +154,23 @@
       <a href="gofrotara.html">Гофротара</a>
       <a href="etiketky.html">Клейкі етикетки</a>
     </div>
-  </section>
+  </div>
 
   <footer>
     <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
     <p>
-      <a href="#">Instagram</a> |
-      <a href="#">TikTok</a>
+      <a href="https://www.instagram.com/llc_rival">Instagram</a> |
+      <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
     </p>
     <p>&copy; 2025 ТОВ "Райвал"</p>
   </footer>
 
   <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slider img');
     setInterval(() => {
@@ -121,5 +179,6 @@
       slides[slideIndex].classList.add('active');
     }, 3000);
   </script>
+
 </body>
 </html>
