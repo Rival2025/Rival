@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стрейч Плівка</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1 {
+      color: #0033cc;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .slideshow-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 40px auto;
+    }
+    .mySlides {
+      display: none;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #0033cc;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffdd00;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Стрейч Плівка</h1>
+    <p>
+      Стрейч-плівка — це універсальний пакувальний матеріал, який широко використовується для фіксації та захисту вантажів під час транспортування або зберігання.
+      Ми виготовляємо:
+    </p>
+    <ul>
+      <li>Джамбо рулони</li>
+      <li>Для палітайзера</li>
+      <li>Ручний стрейч</li>
+    </ul>
+    <p>
+      Є як стандартні позиції (1,8 кг, 2,0 кг, 2,2 кг, 2,5 кг), так і виготовлення під замовлення.<br/>
+      Доступні варіанти:
+    </p>
+    <ul>
+      <li>Первинна прозора</li>
+      <li>Вторинна прозора</li>
+      <li>Чорна</li>
+      <li>Кольорова</li>
+    </ul>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade"><img src="sl1.jpg"></div>
+      <div class="mySlides fade"><img src="sl2.jpg"></div>
+      <div class="mySlides fade"><img src="sl3.jpg"></div>
+      <div class="mySlides fade"><img src="sl4.jpg"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
+    <p>
+      <a href="https://www.instagram.com/llc_rival">Instagram</a> |
+      <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
+    </p>
+    <p>&copy; 2025 ТОВ "Райвал"</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      let slides = document.getElementsByClassName("mySlides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      slides[slideIndex-1].style.display = "block";  
+      setTimeout(showSlides, 3000);
+    }
+  </script>
+</body>
+</html>
