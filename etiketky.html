@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Клейкі етикетки – ТОВ Райвал</title>
+  <title>Etiketky</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,7 +13,6 @@
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
       position: relative;
-      color: #333;
     }
     body::before {
       content: "";
@@ -28,7 +27,7 @@
     nav {
       background-color: #0033cc;
       color: white;
-      padding: 15px 20px;
+      padding: 15px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -44,21 +43,20 @@
       gap: 15px;
       flex-wrap: wrap;
     }
-    nav a {
+    .menu a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      padding: 10px;
     }
-    nav a:hover {
-      color: #ffdd00;
+    .menu a:hover {
+      background-color: #0022aa;
     }
     @media (max-width: 768px) {
       .menu {
         display: none;
         flex-direction: column;
-        background-color: #0033cc;
         width: 100%;
-        padding: 10px;
+        padding: 10px 0;
       }
       .menu.active {
         display: flex;
@@ -68,31 +66,13 @@
       }
     }
     .container {
-      padding: 40px 20px;
       max-width: 900px;
-      margin: 0 auto;
-    }
-    h1 {
-      color: #0033cc;
-      text-align: center;
-    }
-    p, ul {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    .slider {
-      position: relative;
-      max-width: 100%;
-      margin: 30px auto;
-    }
-    .slide {
-      display: none;
-      width: 100%;
-    }
-    .slide img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
     }
     footer {
       background-color: #0033cc;
@@ -109,17 +89,21 @@
   </style>
 </head>
 <body>
-  <nav>
-  <a href="/Rival/index.html">Головна</a>
-  <a href="/Rival/polietilen.html">Поліетиленова плівка</a>
-  <a href="/Rival/strech.html">Стрейч плівка</a>
-  <a href="/Rival/mishky.html">Мішки та пакети</a>
-  <a href="/Rival/skotch.html">Скотч</a>
-  <a href="/Rival/gofra.html">Гофротара</a>
-  <a href="/Rival/etiketky.html">Клейкі етикетки</a>
+
+<nav>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="menu" id="menu">
+    <a href="/Rival/index.html">Головна</a>
+    <a href="/Rival/polietilen.html">Поліетиленова плівка</a>
+    <a href="/Rival/strech.html">Стрейч плівка</a>
+    <a href="/Rival/mishky.html">Мішки та пакети</a>
+    <a href="/Rival/skotch.html">Скотч</a>
+    <a href="/Rival/gofra.html">Гофротара</a>
+    <a href="/Rival/etiketky.html">Клейкі етикетки</a>
+  </div>
 </nav>
 
-  <div class="container">
+<div class="container">
     <h1>Клейкі етикетки</h1>
     <p>Пропонуємо виготовлення самоклейних етикеток для вашої продукції.</p>
     <ul>
@@ -139,29 +123,20 @@
     </div>
   </div>
 
-  <footer>
-    <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
-    <p>
-      <a href="https://www.instagram.com/llc_rival">Instagram</a> |
-      <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
-    </p>
-    <p>&copy; 2025 ТОВ "Райвал"</p>
-  </footer>
+<footer>
+  <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
+  <p>
+    <a href="https://www.instagram.com/llc_rival">Instagram</a> |
+    <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
+  </p>
+  <p>&copy; 2025 ТОВ "Райвал"</p>
+</footer>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("menu").classList.toggle("active");
-    }
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+  }
+</script>
 
-    let slideIndex = 0;
-    const slides = document.getElementsByClassName("slide");
-    function showSlides() {
-      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-      slideIndex = (slideIndex % slides.length) + 1;
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 3000);
-    }
-    showSlides();
-  </script>
 </body>
 </html>
