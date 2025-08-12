@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мішки та пакети – ТОВ Райвал</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #0033cc;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* Слайдер */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      margin: 30px auto;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+    }
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #0033cc;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffdd00;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Мішки та пакети</h1>
+    <p>🔹 Ми виробляємо мішки будь-якого розміру та товщини під ваш запит — з первинної, композитної або вторинної сировини.</p>
+    <p>🔹 Пакети виготовляємо у форматах: <strong>майка</strong>, <strong>петля</strong>, <strong>банан</strong> — з можливістю нанесення друку до 8 кольорів.</p>
+    <p>🔹 Індивідуальний прорахунок згідно ваших параметрів та обсягу.</p>
+
+    <!-- Слайд-шоу -->
+    <div class="slider">
+      <div class="slide"><img src="bag1.jpg" alt="Мішки 1"></div>
+      <div class="slide"><img src="bag2.jpg" alt="Мішки 2"></div>
+      <div class="slide"><img src="bag3.jpg" alt="Мішки 3"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
+    <p>
+      <a href="https://www.instagram.com/llc_rival">Instagram</a> |
+      <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
+    </p>
+    <p>&copy; 2025 ТОВ "Райвал"</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Зміна кожні 3 секунди
+    }
+
+    showSlides();
+  </script>
+</body>
+</html>
