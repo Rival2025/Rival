@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Скотч – ТОВ Райвал</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #0033cc;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    ul {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    /* Слайдер */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      margin: 30px auto;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+    }
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #0033cc;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffdd00;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="text-align: center; padding: 20px;">
+    <a href="index.html">
+      <img src="logo.png" alt="Логотип Райвал" style="max-height: 80px;">
+    </a>
+  </div>
+
+  <div class="container">
+    <h1>Скотч</h1>
+    <p>Скотч (клейка стрічка) — незамінний матеріал для пакування коробок, товарів, посилок та іншої продукції.</p>
+    <p>Ми пропонуємо широкий вибір клейкої стрічки:</p>
+    <ul>
+      <li>Прозорий / коричневий пакувальний скотч</li>
+      <li>Скотч з логотипом</li>
+      <li>Малярний / технічний / спеціалізований скотч</li>
+      <li>Варіанти для ручного та автоматичного пакування</li>
+    </ul>
+    <p>Завжди в наявності скотч прозорий:</p>
+    <ul>
+      <li>66 м / рулон</li>
+      <li>100 м / рулон</li>
+      <li>150 м / рулон</li>
+      <li>200 м / рулон</li>
+      <li>250 м / рулон</li>
+      <li>300 м / рулон</li>
+    </ul>
+    <p>🎨 Можлива індивідуальна розробка дизайну логотипу</p>
+    <p>📦 Працюємо з дрібним і великим оптом</p>
+    <p>🚚 Доставка по всій Україні</p>
+
+    <!-- Слайд-шоу -->
+    <div class="slider">
+      <div class="slide"><img src="scotch1.jpg" alt="Скотч 1"></div>
+      <div class="slide"><img src="scotch2.jpg" alt="Скотч 2"></div>
+      <div class="slide"><img src="scotch3.jpg" alt="Скотч 3"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
+    <p>
+      <a href="https://www.instagram.com/llc_rival">Instagram</a> |
+      <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
+    </p>
+    <p>&copy; 2025 ТОВ "Райвал"</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+
+    showSlides();
+  </script>
+</body>
+</html>
