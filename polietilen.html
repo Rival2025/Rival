@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Polietilen</title>
+  <title>Поліетиленова плівка</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -86,6 +86,32 @@
       text-decoration: none;
       margin: 0 10px;
     }
+
+    .slider-wrapper {
+      position: relative;
+      max-width: 600px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .slide-img {
+      display: none;
+      width: 100%;
+      border-radius: 10px;
+    }
+    .slider-wrapper .prev,
+    .slider-wrapper .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 10px;
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      transform: translateY(-50%);
+    }
+    .slider-wrapper .prev { left: 10px; }
+    .slider-wrapper .next { right: 10px; }
   </style>
 </head>
 <body>
@@ -104,32 +130,33 @@
 </nav>
 
 <div class="container">
-    <h1>Поліетиленова плівка</h1>
-    <p>ТОВ "Райвал" виготовляє пакувальну поліетиленову плівку у різних форматах:</p>
-    <ul>
-      <li>✅ Рукав</li>
-      <li>✅ Напіврукав</li>
-      <li>✅ Полотно</li>
-    </ul>
-    <p>Можливі типи плівки:</p>
-    <ul>
-      <li>🔹 Первинна плівка</li>
-      <li>🔹 Композитна плівка</li>
-      <li>🔹 Вторинна прозора</li>
-      <li>🔹 Вторинна непрозора</li>
-    </ul>
-    <p>📦 Працюємо під замовлення • 🚚 Доставка по всій Україні</p>
+  <h1>Поліетиленова плівка</h1>
+  <p>ТОВ "Райвал" виготовляє пакувальну поліетиленову плівку у різних форматах:</p>
+  <ul>
+    <li>✅ Рукав</li>
+    <li>✅ Напіврукав</li>
+    <li>✅ Полотно</li>
+  </ul>
+  <p>Можливі типи плівки:</p>
+  <ul>
+    <li>🔹 Первинна плівка</li>
+    <li>🔹 Композитна плівка</li>
+    <li>🔹 Вторинна прозора</li>
+    <li>🔹 Вторинна непрозора</li>
+  </ul>
+  <p>📦 Працюємо під замовлення • 🚚 Доставка по всій Україні</p>
 
-    <div class="slider">
-      <div class="slides">
-        <img src="2c76108b-d0ef-431a-9668-97d42080e377.png" alt="Плівка 1">
-        <img src="84f17562-af08-4f53-882f-c807b039b01a.png" alt="Плівка 2">
-        <img src="2d426261-4368-488b-865c-e02835611e0c.png" alt="Плівка 3">
-      </div>
-    </div>
-
-    <a class="return-link" href="index.html">← Повернутись на головну</a>
+  <div class="slider-wrapper">
+    <img class="slide-img" src="2c76108b-d0ef-431a-9668-97d42080e377.png" alt="Плівка 1">
+    <img class="slide-img" src="84f17562-af08-4f53-882f-c807b039b01a.png" alt="Плівка 2">
+    <img class="slide-img" src="2d426261-4368-488b-865c-e02835611e0c.png" alt="Плівка 3">
+    <button class="prev" onclick="plusSlides(-1)">❮</button>
+    <button class="next" onclick="plusSlides(1)">❯</button>
   </div>
+
+  <a class="return-link" href="/Rival/index.html">← Повернутись на головну</a>
+</div>
+
 <footer>
   <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
   <p>
@@ -142,6 +169,23 @@
 <script>
   function toggleMenu() {
     document.getElementById('menu').classList.toggle('active');
+  }
+
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    let slides = document.getElementsByClassName("slide-img");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
   }
 </script>
 
