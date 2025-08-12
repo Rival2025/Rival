@@ -10,26 +10,57 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f8f8;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
       color: #333;
     }
+
+    body::before {
+      content: "";
+      background-color: rgba(255, 255, 255, 0.85);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    nav {
+      background-color: #0033cc;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffdd00;
+    }
+
     .container {
       padding: 40px 20px;
       max-width: 900px;
       margin: 0 auto;
     }
+
     h1 {
       color: #0033cc;
       text-align: center;
     }
-    p {
+
+    p, ul {
       font-size: 18px;
       line-height: 1.6;
       margin-bottom: 15px;
-    }
-    ul {
-      font-size: 18px;
-      margin-bottom: 20px;
     }
 
     /* Слайдер */
@@ -38,10 +69,12 @@
       max-width: 100%;
       margin: 30px auto;
     }
+
     .slide {
       display: none;
       width: 100%;
     }
+
     .slide img {
       width: 100%;
       height: auto;
@@ -55,6 +88,7 @@
       padding: 30px 20px;
       margin-top: 40px;
     }
+
     footer a {
       color: #ffdd00;
       text-decoration: none;
@@ -64,11 +98,15 @@
 </head>
 <body>
 
-  <div style="text-align: center; padding: 20px;">
-    <a href="index.html">
-      <img src="logo.png" alt="Логотип Райвал" style="max-height: 80px;">
-    </a>
-  </div>
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="polietilen.html">Поліетиленова плівка</a>
+    <a href="strech.html">Стрейч плівка</a>
+    <a href="bags.html">Мішки та пакети</a>
+    <a href="scotch.html">Скотч</a>
+    <a href="goffrotara.html">Гофротара</a>
+    <a href="etiketki.html">Клейкі етикетки</a>
+  </nav>
 
   <div class="container">
     <h1>Скотч</h1>
@@ -93,7 +131,6 @@
     <p>📦 Працюємо з дрібним і великим оптом</p>
     <p>🚚 Доставка по всій Україні</p>
 
-    <!-- Слайд-шоу -->
     <div class="slider">
       <div class="slide"><img src="scotch1.jfif" alt="Скотч 1"></div>
       <div class="slide"><img src="scotch2.jfif" alt="Скотч 2"></div>
