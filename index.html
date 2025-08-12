@@ -3,15 +3,16 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RIVAL Packing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Index</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
       position: relative;
-      margin: 0;
-      font-family: Arial, sans-serif;
     }
     body::before {
       content: "";
@@ -30,6 +31,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
     .menu-icon {
       font-size: 26px;
@@ -39,6 +41,7 @@
     .menu {
       display: flex;
       gap: 15px;
+      flex-wrap: wrap;
     }
     .menu a {
       color: white;
@@ -52,10 +55,6 @@
       .menu {
         display: none;
         flex-direction: column;
-        background-color: #0033cc;
-        position: absolute;
-        top: 60px;
-        left: 0;
         width: 100%;
         padding: 10px 0;
       }
@@ -66,91 +65,61 @@
         display: block;
       }
     }
-
     .container {
       max-width: 900px;
-      margin: 40px auto;
-      text-align: center;
-      background: rgba(255,255,255,0.9);
-      padding: 30px;
+      margin: auto;
+      background: white;
+      padding: 40px;
       border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
     }
-
-    .slider {
-      max-width: 800px;
-      margin: 20px auto;
-      position: relative;
-      height: 400px;
-      overflow: hidden;
-    }
-    .slider img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: none;
-    }
-    .slider img.active {
-      display: block;
-    }
-
     footer {
       background-color: #0033cc;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       margin-top: 40px;
+    }
+    footer a {
+      color: #ffdd00;
+      text-decoration: none;
+      margin: 0 10px;
     }
   </style>
 </head>
 <body>
 
-  <nav>
-  <a href="/Rival/index.html">Головна</a>
-  <a href="/Rival/polietilen.html">Поліетиленова плівка</a>
-  <a href="/Rival/strech.html">Стрейч плівка</a>
-  <a href="/Rival/mishky.html">Мішки та пакети</a>
-  <a href="/Rival/skotch.html">Скотч</a>
-  <a href="/Rival/gofra.html">Гофротара</a>
-  <a href="/Rival/etiketky.html">Клейкі етикетки</a>
+<nav>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="menu" id="menu">
+    <a href="/Rival/index.html">Головна</a>
+    <a href="/Rival/polietilen.html">Поліетиленова плівка</a>
+    <a href="/Rival/strech.html">Стрейч плівка</a>
+    <a href="/Rival/mishky.html">Мішки та пакети</a>
+    <a href="/Rival/skotch.html">Скотч</a>
+    <a href="/Rival/gofra.html">Гофротара</a>
+    <a href="/Rival/etiketky.html">Клейкі етикетки</a>
+  </div>
 </nav>
 
-  <div class="container">
-    <h1> Райвал — твій надійний "суперник" у якості</h1>
-    <p>Більше 5 років досвіду в пакувальній продукції</p>
-    <p>🔹 Власне виробництво </p>
-    <p>🚚 Доставка по всій Україні</p>
-    <p>📦 Індивідуальний підхід до кожного клієнта</p>
-  </div>
+<div class="container">
+<h1>Головна сторінка</h1><p>Ласкаво просимо до ТОВ «Райвал»!</p>
+</div>
+<footer>
+  <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
+  <p>
+    <a href="https://www.instagram.com/llc_rival">Instagram</a> |
+    <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
+  </p>
+  <p>&copy; 2025 ТОВ "Райвал"</p>
+</footer>
 
-  <div class="slider">
-    <img src="25af6a08-43cb-4e9f-a86a-eaf186400351.png" class="active" />
-    <img src="b779eb02-809d-4911-b0b7-d02cb20402d8.png" />
-    <img src="c5a8b6b8-64dc-430e-9b0a-66c164109242.png" />
-    <img src="d815085c-8b64-4c3a-8597-81fc27266bd0.png" />
-    <img src="f86750c6-6e0e-42bc-8ae1-4a434301dcfd.png" />
-    <img src="17385db1-9959-4fa6-bcdd-211961a374cf.png" />
-  </div>
-
-  <footer>
-    <p>📞 Телефон: +380733262132 | ✉️ Email: rival.oleksij@gmail.com</p>
-    <p><a href="#" style="color: white;">Instagram</a> | <a href="#" style="color: white;">TikTok</a></p>
-    <p>&copy; 2025 ТОВ "Райвал"</p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
-    }
-
-    let current = 0;
-    const slides = document.querySelectorAll('.slider img');
-    setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 3000);
-  </script>
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
-
