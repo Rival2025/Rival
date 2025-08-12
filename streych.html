@@ -2,18 +2,20 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Стрейч Плівка</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Стрейч Плівка – ТОВ Райвал</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: url('background.png') no-repeat center center fixed;
-      background-size: cover;
       margin: 0;
       padding: 0;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
       position: relative;
+      color: #333;
     }
+
     body::before {
       content: "";
       background-color: rgba(255, 255, 255, 0.85);
@@ -24,48 +26,89 @@
       height: 100%;
       z-index: -1;
     }
-    .navbar {
+
+    nav {
       background-color: #0033cc;
       color: white;
       padding: 15px 20px;
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
     }
-    .navbar a {
+
+    .menu-icon {
+      font-size: 26px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    .container {
-      padding: 40px;
-      max-width: 1000px;
-      margin: auto;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    nav a:hover {
+      color: #ffdd00;
     }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #0033cc;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
     h1 {
       color: #0033cc;
       text-align: center;
     }
-    p {
+
+    p, ul {
       font-size: 18px;
       line-height: 1.6;
     }
-    .slideshow-container {
+
+    /* Слайдер */
+    .slider {
       position: relative;
-      max-width: 1000px;
-      margin: 40px auto;
+      max-width: 100%;
+      margin: 30px auto;
     }
-    .mySlides {
+
+    .slide {
       display: none;
     }
-    img {
+
+    .slide img {
       width: 100%;
       border-radius: 10px;
     }
+
     footer {
       background-color: #0033cc;
       color: white;
@@ -73,6 +116,7 @@
       padding: 30px 20px;
       margin-top: 40px;
     }
+
     footer a {
       color: #ffdd00;
       text-decoration: none;
@@ -82,31 +126,29 @@
 </head>
 <body>
 
-  <div class="navbar">
-    <a href="index.html">Головна</a>
-    <a href="polietilen.html">Поліетиленова плівка</a>
-    <a href="strech.html">Стрейч плівка</a>
-    <a href="mishki.html">Мішки та пакети</a>
-    <a href="scotch.html">Скотч</a>
-    <a href="goffrotara.html">Гофротара</a>
-    <a href="etiketki.html">Клейкі етикетки</a>
-  </div>
+  <nav>
+    <strong>RIVAL</strong>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+      <a href="index.html">Головна</a>
+      <a href="polietilen.html">Поліетиленова плівка</a>
+      <a href="strech.html">Стрейч плівка</a>
+      <a href="myshky.html">Мішки та пакети</a>
+      <a href="scotch.html">Скотч</a>
+      <a href="goffrotara.html">Гофротара</a>
+      <a href="etiketky.html">Клейкі етикетки</a>
+    </div>
+  </nav>
 
   <div class="container">
     <h1>Стрейч Плівка</h1>
-    <p>
-      Стрейч-плівка — це універсальний пакувальний матеріал, який широко використовується для фіксації та захисту вантажів під час транспортування або зберігання.
-      Ми виготовляємо:
-    </p>
+    <p>Стрейч-плівка — це універсальний пакувальний матеріал для фіксації та захисту вантажів.</p>
     <ul>
       <li>Джамбо рулони</li>
       <li>Для палітайзера</li>
       <li>Ручний стрейч</li>
     </ul>
-    <p>
-      Є як стандартні позиції (1,8 кг, 2,0 кг, 2,2 кг, 2,5 кг), так і виготовлення під замовлення.<br/>
-      Доступні варіанти:
-    </p>
+    <p>Доступні типи:</p>
     <ul>
       <li>Первинна прозора</li>
       <li>Вторинна прозора</li>
@@ -114,11 +156,11 @@
       <li>Кольорова</li>
     </ul>
 
-    <div class="slideshow-container">
-      <div class="mySlides fade"><img src="sl1.jfif"></div>
-      <div class="mySlides fade"><img src="sl2.jfif"></div>
-      <div class="mySlides fade"><img src="sl3.jfif"></div>
-      <div class="mySlides fade"><img src="sl4.jfif"></div>
+    <div class="slider">
+      <div class="slide"><img src="sl1.jfif" alt="Стрейч 1"></div>
+      <div class="slide"><img src="sl2.jfif" alt="Стрейч 2"></div>
+      <div class="slide"><img src="sl3.jfif" alt="Стрейч 3"></div>
+      <div class="slide"><img src="sl4.jfif" alt="Стрейч 4"></div>
     </div>
   </div>
 
@@ -132,18 +174,24 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+
     let slideIndex = 0;
-    showSlides();
+    const slides = document.getElementsByClassName("slide");
+
     function showSlides() {
-      let slides = document.getElementsByClassName("mySlides");
       for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+        slides[i].style.display = "none";
       }
       slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      slides[slideIndex-1].style.display = "block";  
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
       setTimeout(showSlides, 3000);
     }
+
+    showSlides();
   </script>
 </body>
 </html>
