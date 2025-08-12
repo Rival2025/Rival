@@ -10,26 +10,87 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f8f8;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
       color: #333;
     }
+
+    body::before {
+      content: "";
+      background-color: rgba(255, 255, 255, 0.85);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    nav {
+      background-color: #0033cc;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .menu-icon {
+      font-size: 26px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffdd00;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background-color: #0033cc;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
     .container {
       padding: 40px 20px;
       max-width: 900px;
       margin: 0 auto;
     }
+
     h1 {
       color: #0033cc;
       text-align: center;
     }
-    p {
+
+    p, ul {
       font-size: 18px;
       line-height: 1.6;
-      margin-bottom: 15px;
-    }
-    ul {
-      font-size: 18px;
-      margin-bottom: 20px;
     }
 
     /* Слайдер */
@@ -38,10 +99,12 @@
       max-width: 100%;
       margin: 30px auto;
     }
+
     .slide {
       display: none;
       width: 100%;
     }
+
     .slide img {
       width: 100%;
       height: auto;
@@ -55,6 +118,7 @@
       padding: 30px 20px;
       margin-top: 40px;
     }
+
     footer a {
       color: #ffdd00;
       text-decoration: none;
@@ -64,11 +128,19 @@
 </head>
 <body>
 
-  <div style="text-align: center; padding: 20px;">
-    <a href="index.html">
-      <img src="logo.png" alt="Логотип Райвал" style="max-height: 80px;">
-    </a>
-  </div>
+  <nav>
+    <strong>RIVAL</strong>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+      <a href="index.html">Головна</a>
+      <a href="polietilen.html">Поліетиленова плівка</a>
+      <a href="strech.html">Стрейч плівка</a>
+      <a href="myshky.html">Мішки та пакети</a>
+      <a href="scotch.html">Скотч</a>
+      <a href="goffrotara.html">Гофротара</a>
+      <a href="etiketky.html">Клейкі етикетки</a>
+    </div>
+  </nav>
 
   <div class="container">
     <h1>Гофротара</h1>
@@ -84,7 +156,6 @@
     <p>🖨️ Друк логотипу або технічної інформації</p>
     <p>🚚 Доставка по всій Україні</p>
 
-    <!-- Слайд-шоу -->
     <div class="slider">
       <div class="slide"><img src="gofro1.jfif" alt="Гофротара 1"></div>
       <div class="slide"><img src="gofro2.jpg" alt="Гофротара 2"></div>
@@ -102,6 +173,10 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+
     let slideIndex = 0;
     const slides = document.getElementsByClassName("slide");
 
