@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Клейкі етикетки – ТОВ Райвал</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #0033cc;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    ul {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    /* Слайдер */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      margin: 30px auto;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+    }
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #0033cc;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffdd00;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="text-align: center; padding: 20px;">
+    <a href="index.html">
+      <img src="logo.png" alt="Логотип Райвал" style="max-height: 80px;">
+    </a>
+  </div>
+
+  <div class="container">
+    <h1>Клейкі етикетки</h1>
+    <p>Ми виготовляємо самоклеючі етикетки різного типу та формату:</p>
+    <ul>
+      <li>Етикетки для продукції (харчової, косметичної, побутової)</li>
+      <li>Етикетки зі штрихкодом або QR-кодом</li>
+      <li>Термотрансферні та термоетикетки</li>
+      <li>Етикетки в рулонах або на аркушах</li>
+    </ul>
+    <p>🎨 Повноколірний друк</p>
+    <p>📐 Індивідуальні розміри та форми</p>
+    <p>🚚 Доставка по всій Україні</p>
+
+    <!-- Слайд-шоу -->
+    <div class="slider">
+      <div class="slide"><img src="etiketka1.jpg" alt="Етикетка 1"></div>
+      <div class="slide"><img src="etiketka2.jpg" alt="Етикетка 2"></div>
+      <div class="slide"><img src="etiketka3.jpg" alt="Етикетка 3"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
+    <p>
+      <a href="https://www.instagram.com/llc_rival">Instagram</a> |
+      <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
+    </p>
+    <p>&copy; 2025 ТОВ "Райвал"</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+
+    showSlides();
+  </script>
+</body>
+</html>
