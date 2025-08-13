@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Стрейч плівка</title>
+  <title>Стрейч плівка – ТОВ Райвал</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -74,30 +74,65 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       margin-top: 30px;
     }
-    .slider {
-      max-width: 100%;
+    h1 {
+      color: #0033cc;
+    }
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* Слайдер */
+    .slideshow-container {
       position: relative;
-      margin-top: 20px;
-      overflow: hidden;
+      max-width: 100%;
+      margin: 20px auto;
+    }
+    .mySlides {
+      display: none;
+    }
+    .mySlides img {
+      width: 100%;
       border-radius: 10px;
     }
-    .slides {
-      display: flex;
-      width: 300%;
-      animation: slide 12s infinite;
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      background-color: rgba(0,0,0,0.5);
+      user-select: none;
+      transform: translateY(-50%);
     }
-    .slides img {
-      width: 300px;
-      height: auto;
-      margin-right: 20px;
-      border-radius: 10px;
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
     }
-    @keyframes slide {
-      0% {margin-left: 0%;}
-      33% {margin-left: -100%;}
-      66% {margin-left: -200%;}
-      100% {margin-left: 0%;}
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
     }
+    .dot-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
     footer {
       background-color: #0033cc;
       color: white;
@@ -127,38 +162,43 @@
   </div>
 </nav>
 
-  <div class="container">
-    <h1>Стрейч Плівка</h1>
-    <p>Стрейч-плівка — це універсальний пакувальний матеріал для фіксації та захисту вантажів.</p>
-    <ul>
-      <li>✅Джамбо рулони</li>
-      <li>✅Для палітайзера</li>
-      <li>✅Ручний стрейч</li>
-    </ul>
-    <p>Доступні типи:</p>
-    <ul>
-      <li>🔹Первинна прозора</li>
-      <li>🔹Вторинна прозора</li>
-      <li>🔹Чорна</li>
-      <li>🔹Кольорова</li>
-     </ul>
-  <p>📦 Працюємо під замовлення • 🚚 Доставка по всій Україні</p>
+<div class="container">
+  <h1>Стрейч плівка</h1>
+  <p>Стрейч-плівка — це універсальний пакувальний матеріал для захисту та фіксації вантажів під час транспортування або зберігання.</p>
+  <ul>
+    <li>✅Джамбо рулони</li>
+    <li>✅Для палітайзера</li>
+    <li>✅Ручний стрейч</li>
+  </ul>
+  <p>Маємо стандартні позиції: 1.8 кг, 2.0 кг, 2.2 кг, 2.5 кг</p>
+  <ul>
+    <li>🔹Первинна прозора</li>
+    <li>🔹Вторинна прозора</li>
+    <li>🔹Чорна</li>
+    <li>🔹Кольорова</li>
+  </ul>
 
-      <div class="slider">
-        <div class="slides">
-          <img src="sl1.jfif" alt="">
-          <img src="sl2.jfif" alt="">
-          <img src="sl3.jfif" alt="">
-          <img src="sl4.jfif" alt="">
-          <img src="sl5.jfif" alt="">
-          <img src="sl6.jfif" alt="">
-          <img src="sl7.jfif" alt="">
-          <img src="sl8.jfif" alt="">
-          <img src="sl9.jfif" alt="">
-        </div>
-      </div>
-    </div>
-    
+  <!-- Слайд-шоу -->
+  <div class="slideshow-container">
+    <div class="mySlides fade"><img src="sl1.jfif" alt="Стрейч 1"></div>
+    <div class="mySlides fade"><img src="sl2.jfif" alt="Стрейч 2"></div>
+    <div class="mySlides fade"><img src="sl3.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl4.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl5.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl6.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl7.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl8.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl9.jfif" alt="Стрейч 3"></div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+
 <footer>
   <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
   <p>
@@ -167,10 +207,37 @@
   </p>
   <p>&copy; 2025 ТОВ "Райвал"</p>
 </footer>
+
 <script>
-  function toggleMenu() {{
-    document.getElementById('menu').classList.toggle('active');
-  }}
+function toggleMenu() {
+  document.getElementById('menu').classList.toggle('active');
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
 </script>
+
 </body>
 </html>
