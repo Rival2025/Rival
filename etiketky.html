@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Etiketky</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Клейкі етикетки – ТОВ Райвал</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,6 +13,7 @@
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
       position: relative;
+      color: #333;
     }
     body::before {
       content: "";
@@ -71,8 +72,66 @@
       background: white;
       padding: 40px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       margin-top: 30px;
+      text-align: center;
+    }
+    h1 {
+      color: #0033cc;
+    }
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: left;
+    }
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto;
+    }
+    .mySlides {
+      display: none;
+    }
+    .mySlides img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      transform: translateY(-50%);
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .dot-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    .active, .dot:hover {
+      background-color: #717171;
     }
     footer {
       background-color: #0033cc;
@@ -104,38 +163,63 @@
 </nav>
 
 <div class="container">
-    <h1>Клейкі етикетки</h1>
-    <p>Пропонуємо виготовлення самоклейних етикеток для вашої продукції.</p>
-    <ul>
-      <li>Білі, прозорі, кольорові етикетки</li>
-      <li>З друком логотипу, штрихкодів, QR-кодів</li>
-      <li>У рулонах або аркушах</li>
-      <li>Для харчової, хімічної, логістичної продукції</li>
-    </ul>
-    <p>🎯 Індивідуальний дизайн під ваш бренд</p>
-    <p>🖨️ Друк до 8 кольорів</p>
-    <p>🚚 Доставка по Україні</p>
+  <h1>Клейкі етикетки</h1>
+  <p>Пропонуємо виготовлення самоклейних етикеток різного формату:</p>
+  <ul>
+    <li>Для харчової, косметичної, побутової продукції та інших</li>
+    <li>З логотипом, штрихкодом або QR-кодом</li>
+    <li>Термотрансферні та термоетикетки</li>
+    <li>В рулонах або на аркушах</li>
+  </ul>
+  <p><strong>Повноколірний друк • Індивідуальні розміри і форми • Доставка по Україні</strong></p>
 
-    <div class="slider">
-      <div class="slide"><img src="etiketka1.jfif" alt="Етикетка 1"></div>
-      <div class="slide"><img src="etiketka2.jfif" alt="Етикетка 2"></div>
-      <div class="slide"><img src="etiketka3.jfif" alt="Етикетка 3"></div>
-    </div>
+  <div class="slideshow-container">
+    <div class="mySlides"><img src="etiket1.jfif" alt="Етикетка 1"></div>
+    <div class="mySlides"><img src="etiket2.jpg" alt="Етикетка 2"></div>
+    <div class="mySlides"><img src="etiket3.jpg" alt="Етикетка 3"></div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
 
 <footer>
   <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
-  <p>
-    <a href="https://www.instagram.com/llc_rival">Instagram</a> |
-    <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
-  </p>
+  <p><a href="https://www.instagram.com/llc_rival">Instagram</a> | <a href="https://www.tiktok.com/@rival_packing">TikTok</a></p>
   <p>&copy; 2025 ТОВ "Райвал"</p>
 </footer>
 
 <script>
-  function toggleMenu() {
-    document.getElementById('menu').classList.toggle('active');
-  }
+function toggleMenu() {
+  document.getElementById('menu').classList.toggle('active');
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.querySelectorAll(".mySlides");
+  const dots = document.querySelectorAll(".dot");
+  if (n > slides.length) slideIndex = 1;
+  if (n < 1) slideIndex = slides.length;
+  slides.forEach(slide => slide.style.display = "none");
+  dots.forEach(dot => dot.classList.remove("active"));
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].classList.add("active");
+}
 </script>
 
 </body>
