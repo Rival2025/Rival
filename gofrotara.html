@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Гофротара</title>
+  <title>Гофротара – ТОВ Райвал</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -74,30 +74,64 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       margin-top: 30px;
     }
-    .slider {
-      max-width: 100%;
+    h1 {
+      color: #0033cc;
+    }
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .slideshow-container {
       position: relative;
-      margin-top: 20px;
-      overflow: hidden;
+      max-width: 100%;
+      margin: 20px auto;
+    }
+    .mySlides {
+      display: none;
+    }
+    .mySlides img {
+      width: 100%;
       border-radius: 10px;
     }
-    .slides {
-      display: flex;
-      width: 300%;
-      animation: slide 12s infinite;
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      background-color: rgba(0,0,0,0.5);
+      user-select: none;
+      transform: translateY(-50%);
     }
-    .slides img {
-      width: 300px;
-      height: auto;
-      margin-right: 20px;
-      border-radius: 10px;
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
     }
-    @keyframes slide {
-      0% {margin-left: 0%;}
-      33% {margin-left: -100%;}
-      66% {margin-left: -200%;}
-      100% {margin-left: 0%;}
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
     }
+    .dot-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
     footer {
       background-color: #0033cc;
       color: white;
@@ -127,18 +161,35 @@
   </div>
 </nav>
 
-    <div class="container">
-      <h1>Гофротара</h1>
-      <p>Зразковий опис для сторінки "Гофротара".</p>
-      <div class="slider">
-        <div class="slides">
-          <img src="gofro1.jfif" alt="">
-          <img src="gofro2.jpg" alt="">
-          <img src="gofro3.jfif" alt="">
-        </div>
-      </div>
-    </div>
-    
+<div class="container">
+  <h1>Гофротара та Папір</h1>
+  <p>Гофротара та Папір — це надійне та екологічне пакування для зберігання і транспортування продукції.</p>
+  <p>Ми пропонує виготовлення гофротари та паперу під замовлення будь-якої складності:</p>
+  <ul>
+    <li>Папір</li>
+    <li>Гофроящики (4-х клапанні, самозбірні, з клапаном)</li>
+    <li>Вкладиші, прокладки, решітки з гофрокартону</li>
+    <li>3-шаровий та 5-шаровий гофрокартон</li>
+    <li>Білий / бурий гофрокартон</li>
+  </ul>
+  <p>📐 Індивідуальні розміри та конструкції</p>
+  <p>🖨️ Друк логотипу або технічної інформації</p>
+  <p>🚚 Доставка по всій Україні</p>
+
+  <div class="slideshow-container">
+    <div class="mySlides"><img src="gofro1.jfif" alt="Гофротара 1"></div>
+    <div class="mySlides"><img src="gofro2.jpg" alt="Гофротара 2"></div>
+    <div class="mySlides"><img src="gofro3.jfif" alt="Гофротара 3"></div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+
 <footer>
   <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
   <p>
@@ -147,10 +198,36 @@
   </p>
   <p>&copy; 2025 ТОВ "Райвал"</p>
 </footer>
+
 <script>
-  function toggleMenu() {{
-    document.getElementById('menu').classList.toggle('active');
-  }}
+function toggleMenu() {
+  document.getElementById('menu').classList.toggle('active');
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
 </script>
+
 </body>
 </html>
