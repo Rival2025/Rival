@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Композитна арматура</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      background-color: rgba(255, 255, 255, 0.85);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    nav {
+      background-color: #0033cc;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .menu-icon {
+      font-size: 26px;
+      cursor: pointer;
+      display: none;
+    }
+    .menu {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+    .menu a:hover {
+      background-color: #0022aa;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+      }
+      .menu.active {
+        display: flex;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
+    h1 {
+      color: #0033cc;
+    }
+    p, ul {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* Слайдер */
+    .slideshow-container {
+      position: relative;
+      max-width: 500px;   /* обмеження по ширині на ПК */
+      margin: 20px auto;
+    }
+    .mySlides {
+      display: none;
+    }
+    .mySlides img {
+      width: 100%;
+      max-height: 300px;     /* обмеження по висоті */
+      object-fit: cover;     /* обрізає зайве, але зберігає пропорції */
+      border-radius: 10px;
+      transition: transform 0.4s ease; /* плавний zoom */
+    }
+    .mySlides img:hover {
+      transform: scale(1.05); /* збільшення при наведенні */
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      background-color: rgba(0,0,0,0.5);
+      user-select: none;
+      transform: translateY(-50%);
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    .dot-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    .dot.active,
+    .dot:hover {
+      background-color: #717171;
+    }
+
+    footer {
+      background-color: #0033cc;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffdd00;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    /* Адаптація для мобільних */
+    @media (max-width: 768px) {
+      .slideshow-container {
+        max-width: 100%;
+        margin: 10px auto;
+      }
+      .mySlides img {
+        max-height: 200px;  /* нижча висота на мобільних */
+      }
+    }
+</style>
+
+</head>
+<body>
+
+<nav>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="menu" id="menu">
+    <a href="/index.html">Головна</a>
+    <a href="/polietilen.html">Поліетиленова плівка</a>
+    <a href="/streych.html">Стрейч плівка</a>
+    <a href="/myshky.html">Мішки та пакети</a>
+    <a href="/skotch.html">Скотч</a>
+    <a href="/gofrotara.html">Гофротара</a>
+    <a href="/etiketky.html">Клейкі етикетки</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>Стрейч плівка</h1>
+  <p>Стрейч-плівка — це універсальний пакувальний матеріал для захисту та фіксації вантажів під час транспортування або зберігання.</p>
+  <ul>
+    <li>✅Джамбо рулони</li>
+    <li>✅Для палітайзера</li>
+    <li>✅Ручний стрейч</li>
+  </ul>
+  <p>Маємо стандартні позиції: 1.8 кг, 2.0 кг, 2.2 кг, 2.5 кг</p>
+  <ul>
+    <li>🔹Первинна прозора</li>
+    <li>🔹Вторинна прозора</li>
+    <li>🔹Чорна</li>
+    <li>🔹Кольорова</li>
+  </ul>
+
+  <!-- Слайд-шоу -->
+  <div class="slideshow-container">
+    <div class="mySlides fade"><img src="sl1.jfif" alt="Стрейч 1"></div>
+    <div class="mySlides fade"><img src="sl2.jfif" alt="Стрейч 2"></div>
+    <div class="mySlides fade"><img src="sl3.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl4.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl5.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl6.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl7.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl8.jfif" alt="Стрейч 3"></div>
+    <div class="mySlides fade"><img src="sl9.jfif" alt="Стрейч 3"></div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+
+<footer>
+  <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
+  <p>
+    <a href="https://www.instagram.com/llc_rival">Instagram</a> |
+    <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
+  </p>
+  <p>&copy; 2025 ТОВ "Райвал"</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('menu').classList.toggle('active');
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>
