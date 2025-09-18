@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Агро Плівка,Агроволокно</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      background-color: rgba(255, 255, 255, 0.85);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    nav {
+      background-color: #0033cc;
+      color: white;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .menu-icon {
+      font-size: 26px;
+      cursor: pointer;
+      display: none;
+    }
+    .menu {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .menu a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+    .menu a:hover {
+      background-color: #0022aa;
+    }
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+      }
+      .menu.active {
+        display: flex;
+      }
+      .menu-icon {
+        display: block;
+      }
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
+    footer {
+      background-color: #0033cc;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #ffdd00;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      max-width: 600px;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .slide-img {
+      display: none;
+      width: 100%;
+      border-radius: 10px;
+    }
+    .slider-wrapper .prev,
+    .slider-wrapper .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 10px;
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      transform: translateY(-50%);
+    }
+    .slider-wrapper .prev { left: 10px; }
+    .slider-wrapper .next { right: 10px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="menu" id="menu">
+    <a href="/index.html">Головна</a>
+    <a href="/polietilen.html">Поліетиленова плівка</a>
+    <a href="/streych.html">Стрейч плівка</a>
+    <a href="/myshky.html">Мішки та пакети</a>
+    <a href="/skotch.html">Скотч</a>
+    <a href="/gofra.html">Гофротара</a>
+    <a href="/etiketky.html">Клейкі етикетки</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>Поліетиленова плівка</h1>
+  <p>ТОВ "Райвал" виготовляє пакувальну поліетиленову плівку у різних форматах:</p>
+  <ul>
+    <li>✅ Рукав</li>
+    <li>✅ Напіврукав</li>
+    <li>✅ Полотно</li>
+  </ul>
+  <p>Можливі типи плівки:</p>
+  <ul>
+    <li>🔹 Первинна плівка</li>
+    <li>🔹 Композитна плівка</li>
+    <li>🔹 Вторинна прозора</li>
+    <li>🔹 Вторинна непрозора</li>
+  </ul>
+  <p>📦 Працюємо під замовлення • 🚚 Доставка по всій Україні</p>
+
+  <div class="slider-wrapper">
+    <img class="slide-img" src="2c76108b-d0ef-431a-9668-97d42080e377.png" alt="Плівка 1">
+    <img class="slide-img" src="84f17562-af08-4f53-882f-c807b039b01a.png" alt="Плівка 2">
+    <img class="slide-img" src="2d426261-4368-488b-865c-e02835611e0c.png" alt="Плівка 3">
+    <button class="prev" onclick="plusSlides(-1)">❮</button>
+    <button class="next" onclick="plusSlides(1)">❯</button>
+  </div>
+
+  <a class="return-link" href="/Rival/index.html">← Повернутись на головну</a>
+</div>
+
+<footer>
+  <p>📞 Телефон: +380733262132 | 📧 Email: rival.oleksij@gmail.com</p>
+  <p>
+    <a href="https://www.instagram.com/llc_rival">Instagram</a> |
+    <a href="https://www.tiktok.com/@rival_packing">TikTok</a>
+  </p>
+  <p>&copy; 2025 ТОВ "Райвал"</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+  }
+
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
+    let slides = document.getElementsByClassName("slide-img");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+  }
+</script>
+
+</body>
+</html>
